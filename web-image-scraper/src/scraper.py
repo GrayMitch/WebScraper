@@ -173,7 +173,7 @@ class ImageScraper:
                         print(f"Skipping invalid base64 URL: {url[:50]}...")
                         continue
                     img_type, img_data = match.groups()
-                    if img_type not in ["jpeg", "jpg", "png", "webp", "gif"]:
+                    if img_type not in ["jpeg", "jpg", "png", "webp"]:
                         print(f"Skipping unsupported image type: {img_type}")
                         continue
                     img_bytes = base64.b64decode(img_data)
@@ -184,7 +184,7 @@ class ImageScraper:
                     parsed_url = urlparse(url)
                     filename = os.path.basename(parsed_url.path)
                     
-                    if not filename or not any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif']):
+                    if not filename or not any(filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp']):
                         filename = f"image_{i+1}"
                     
                     response = requests.get(url, headers=headers, stream=True, timeout=10)

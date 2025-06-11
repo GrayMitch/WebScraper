@@ -3,7 +3,7 @@ from scraper import ImageScraper
 from utils import create_directory
 
 def main():
-    search_keys = ["forklift"]
+    search_keys = ["forklift", "forklift truck", "forklift loader", "forklift machine", "forklift vehicle"]
     base_directory = "forklift_dataset"
     downloaded_urls = set()  # Track downloaded image URLs
 
