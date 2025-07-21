@@ -234,7 +234,7 @@ class ImageScraper:
                 print(f"Failed to download {url[:50]}...: {e}")
                 continue
             except PermissionError:
-                print(f"Error: No permission to write to '{file_path}'")
+                print(f"Error: No permission to write to '{file_path}'") # type: ignore
                 continue
             except Exception as e:
                 print(f"Error saving {url[:50]}...: {e}")
